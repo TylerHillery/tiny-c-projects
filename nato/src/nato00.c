@@ -3,6 +3,9 @@
  * try to think ahead of what the author might have the "tiny project" be. In
  * this case I thought it would fun to take a string and convert each character
  * to the NATO equivalent.
+ * 
+ * Edit: I was right, this turned about to be the exact project the author had
+ * you do.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,6 +23,11 @@ const char *nato[] = {"Alfa",    "Bravo",  "Charlie", "Delta",    "Echo",
  * if the char is not alpha, return -1
  */
 int get_alpha_index(char c) {
+  /*
+   * Review:
+   * - Could have used toupper instead of (c & ~32)
+   * - Could have used isalpha(c) instead of checking the bounds
+   */
   int i = (c & ~32) - 'A';
   return i >= 0 && i < 26 ? i : -1;
 }
