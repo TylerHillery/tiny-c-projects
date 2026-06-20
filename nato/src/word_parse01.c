@@ -1,25 +1,29 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+char isterm(char *term) {
 
-  char sometext[64];
-  char *match;
+  const char *nato[] = {
+      "Alfa",   "Bravo",   "Charlie", "Delta",  "Echo",   "Foxtrox", "Golf",
+      "Hotel",  "India",   "Juliett", "Kilo",   "Lima",   "Mike",    "November",
+      "Oscar",  "Papa",    "Quebec",  "Romeo",  "Sierra", "Tango",   "Uniform",
+      "Victor", "Whiskey", "Xray",    "Yankee", "Zulu"};
 
-  printf("Type some text: ");
-  fgets(sometext, 64, stdin);
+  int x;
+  const char *n, *t;
 
-
-  /*
-   * Question: I assume strtok is not thread safe because it must keep some
-   * internal state to be able to continue to work on the original char * that 
-   * was passed in
-   */
-  match = strtok(sometext, " ");
-  while (match) {
-    printf("%s\n", match);
-    match = strtok(NULL, " ");
+  for (x = 0; x < (int)(sizeof(nato) / sizeof(nato[0])); x++) {
+    n = nato[x];
+    t = term;
+    while (*n != '\0') {
+      if ((*n | 0x20) != (*t | 0x20))
+        break;
+      n++;
+      t++;
+    }
+    if (*n == '\0') {
+      return *nato[x];
+    }
   }
-
-  return 0;
+  return '\0';
 }

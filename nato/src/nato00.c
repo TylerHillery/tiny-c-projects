@@ -3,7 +3,7 @@
  * try to think ahead of what the author might have the "tiny project" be. In
  * this case I thought it would fun to take a string and convert each character
  * to the NATO equivalent.
- * 
+ *
  * Edit: I was right, this turned about to be the exact project the author had
  * you do.
  */
@@ -11,12 +11,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-const char *nato[] = {"Alfa",    "Bravo",  "Charlie", "Delta",    "Echo",
-                      "Foxtrox", "Golf",   "Hotel",   "India",    "Juliett",
-                      "Kilo",    "Lima",   "Mike",    "November", "Oscar",
-                      "Papa",    "Quebec", "Romeo",   "Sierra",   "Tango",
-                      "Uniform", "Victor", "Whiskey", "Xray",     "Yankee",
-                      "Whiskey", "Xray",   "Yankee",  "Zulu"};
+const char *nato[] = {
+    "Alfa",   "Bravo",   "Charlie", "Delta",  "Echo",   "Foxtrox", "Golf",
+    "Hotel",  "India",   "Juliett", "Kilo",   "Lima",   "Mike",    "November",
+    "Oscar",  "Papa",    "Quebec",  "Romeo",  "Sierra", "Tango",   "Uniform",
+    "Victor", "Whiskey", "Xray",    "Yankee", "Zulu"};
 
 /*
  * Returns the alpha index of the char if the char is a-z e.g. a is 0, b is 1...

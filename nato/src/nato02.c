@@ -4,12 +4,11 @@
 
 int main(int argc, char *argv[]) {
 
-  const char *nato[] = {"Alfa",    "Bravo",  "Charlie", "Delta",    "Echo",
-                        "Foxtrox", "Golf",   "Hotel",   "India",    "Juliett",
-                        "Kilo",    "Lima",   "Mike",    "November", "Oscar",
-                        "Papa",    "Quebec", "Romeo",   "Sierra",   "Tango",
-                        "Uniform", "Victor", "Whiskey", "Xray",     "Yankee",
-                        "Whiskey", "Xray",   "Yankee",  "Zulu"};
+  const char *nato[] = {
+      "Alfa",   "Bravo",   "Charlie", "Delta",  "Echo",   "Foxtrox", "Golf",
+      "Hotel",  "India",   "Juliett", "Kilo",   "Lima",   "Mike",    "November",
+      "Oscar",  "Papa",    "Quebec",  "Romeo",  "Sierra", "Tango",   "Uniform",
+      "Victor", "Whiskey", "Xray",    "Yankee", "Zulu"};
 
   FILE *n;
   int ch;
@@ -25,13 +24,12 @@ int main(int argc, char *argv[]) {
     exit(1);
   }
 
-  while ( (ch=fgetc(n)) != EOF) {
-    if(isalpha(ch)) {
+  while ((ch = fgetc(n)) != EOF) {
+    if (isalpha(ch)) {
       printf("%s", nato[toupper(ch) - 'A']);
     }
   }
   putchar('\n');
   fclose(n);
-  return(0);
-
+  return (0);
 }
