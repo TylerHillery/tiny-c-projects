@@ -6,8 +6,8 @@ int main() {
 
   while ((c = getchar()) != EOF) {
     if (c == '\n') {
-        printf("\n----------\n");
-        continue;
+      printf("\n----------\n");
+      continue;
     }
     if (!isalpha(c)) {
       printf("%c", c);
